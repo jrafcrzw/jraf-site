@@ -1,0 +1,201 @@
+---
+// src/components/Navbar.astro
+---
+
+<nav class="bg-black shadow-2xl border-b border-emerald-900/20 sticky top-0 z-50 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo/Brand -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-4 group">
+          <div>
+            <span class="font-heading text-2xl font-bold text-white tracking-tight">JRAF.w</span>
+          </div>
+          <div>
+            <span class="text-sm text-zinc-300 font-medium tracking-wide">Sites. Signals. Systems</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:block">
+        <div class="ml-10 flex items-center space-x-8">
+          <a href="/" class="text-white hover:text-emerald-200 px-4 py-2 text-sm font-medium transition-all duration-300 relative group">
+            Home
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          
+          <!-- Services Dropdown -->
+          <div class="relative group services-dropdown">
+            <button class="text-zinc-300 hover:text-emerald-200 px-4 py-2 text-sm font-medium transition-all duration-300 flex items-center space-x-1 group">
+              <span>Services</span>
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+              <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </button>
+            
+            <!-- Dropdown Menu -->
+            <div class="services-menu absolute left-0 top-full mt-2 w-64 bg-gradient-to-br from-zinc-900/98 via-black/98 to-zinc-900/98 backdrop-blur-xl border border-emerald-900/30 rounded-lg shadow-2xl shadow-black/50 opacity-0 invisible transform translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="/sites" class="flex items-start space-x-3 p-3 rounded-md hover:bg-gradient-to-r hover:from-emerald-900/20 hover:to-amber-800/10 transition-all duration-200 group/item">
+                  <div class="w-8 h-8 bg-gradient-to-br from-emerald-800/20 to-amber-800/20 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:from-emerald-700/30 group-hover/item:to-amber-700/30 transition-all duration-200">
+                    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-medium text-sm group-hover/item:text-emerald-200 transition-colors">Sites</h4>
+                    <p class="text-zinc-400 text-xs mt-0.5">Modern web development</p>
+                  </div>
+                </a>
+                
+                <a href="/tracking" class="flex items-start space-x-3 p-3 rounded-md hover:bg-gradient-to-r hover:from-emerald-900/20 hover:to-amber-800/10 transition-all duration-200 group/item">
+                  <div class="w-8 h-8 bg-gradient-to-br from-emerald-800/20 to-amber-800/20 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:from-emerald-700/30 group-hover/item:to-amber-700/30 transition-all duration-200">
+                    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-medium text-sm group-hover/item:text-emerald-200 transition-colors">Tracking</h4>
+                    <p class="text-zinc-400 text-xs mt-0.5">Analytics & insights</p>
+                  </div>
+                </a>
+                
+                <a href="/automations" class="flex items-start space-x-3 p-3 rounded-md hover:bg-gradient-to-r hover:from-emerald-900/20 hover:to-amber-800/10 transition-all duration-200 group/item">
+                  <div class="w-8 h-8 bg-gradient-to-br from-emerald-800/20 to-amber-800/20 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:from-emerald-700/30 group-hover/item:to-amber-700/30 transition-all duration-200">
+                    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-medium text-sm group-hover/item:text-emerald-200 transition-colors">Automations</h4>
+                    <p class="text-zinc-400 text-xs mt-0.5">Workflow optimization</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/about" class="text-zinc-300 hover:text-emerald-200 px-4 py-2 text-sm font-medium transition-all duration-300 relative group">
+            About
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact CTA Button (Desktop) -->
+      <div class="hidden lg:block">
+        <a href="/contact" class="relative group">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-700/60 via-amber-600/40 to-amber-800/60 rounded-lg blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
+          <div class="relative bg-gradient-to-r from-black via-zinc-900 to-black px-6 py-3 rounded-lg text-emerald-200 font-medium text-sm border border-emerald-800/40 hover:border-emerald-600/60 hover:text-white transition-all duration-300">
+            Contact Us
+          </div>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="lg:hidden">
+        <button 
+          type="button" 
+          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-emerald-200 hover:bg-emerald-900/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-700 transition-all duration-300"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg class="hamburger-icon block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close icon -->
+          <svg class="close-icon hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden lg:hidden">
+    <div class="px-4 pt-4 pb-6 space-y-2 bg-black backdrop-blur-xl border-t border-emerald-900/20">
+      <a href="/" class="text-white hover:text-emerald-200 block px-4 py-3 text-base font-medium rounded-md hover:bg-gradient-to-r hover:from-emerald-900/20 hover:to-amber-800/10 transition-all duration-200">
+        Home
+      </a>
+      
+      <!-- Mobile Services Section -->
+      <div class="mobile-services">
+        <button class="mobile-services-toggle w-full text-left text-zinc-300 hover:text-emerald-200 px-4 py-3 text-base font-medium rounded-md hover:bg-gradient-to-r hover:from-emerald-900/20 hover:to-amber-800/10 transition-all duration-200 flex items-center justify-between">
+          <span>Services</span>
+          <svg class="mobile-services-arrow w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="mobile-services-menu hidden pl-6 space-y-1">
+          <a href="/sites" class="text-zinc-400 hover:text-emerald-200 block px-4 py-2 text-sm rounded-md hover:bg-emerald-900/10 transition-all duration-200">
+            Sites
+          </a>
+          <a href="/tracking" class="text-zinc-400 hover:text-emerald-200 block px-4 py-2 text-sm rounded-md hover:bg-emerald-900/10 transition-all duration-200">
+            Tracking
+          </a>
+          <a href="/automations" class="text-zinc-400 hover:text-emerald-200 block px-4 py-2 text-sm rounded-md hover:bg-emerald-900/10 transition-all duration-200">
+            Automations
+          </a>
+        </div>
+      </div>
+      
+      <a href="/about" class="text-zinc-300 hover:text-emerald-200 block px-4 py-3 text-base font-medium rounded-md hover:bg-gradient-to-r hover:from-emerald-900/20 hover:to-amber-800/10 transition-all duration-200">
+        About
+      </a>
+      
+      <div class="pt-4">
+        <a href="/contact" class="relative group block">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-700/60 via-amber-600/40 to-amber-800/60 rounded-lg blur opacity-60"></div>
+          <div class="relative bg-gradient-to-r from-black via-zinc-900 to-black px-6 py-3 rounded-lg text-emerald-200 font-medium text-base text-center border border-emerald-800/40">
+            Contact Us
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button') as HTMLButtonElement | null;
+    const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement | null;
+    const hamburgerIcon = document.querySelector('.hamburger-icon') as HTMLElement | null;
+    const closeIcon = document.querySelector('.close-icon') as HTMLElement | null;
+
+    // Mobile services toggle
+    const mobileServicesToggle = document.querySelector('.mobile-services-toggle') as HTMLButtonElement | null;
+    const mobileServicesMenu = document.querySelector('.mobile-services-menu') as HTMLElement | null;
+    const mobileServicesArrow = document.querySelector('.mobile-services-arrow') as HTMLElement | null;
+
+    // Main mobile menu toggle
+    if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Toggle icons
+        hamburgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        
+        // Update aria-expanded
+        mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+      });
+    }
+
+    // Mobile services dropdown toggle
+    if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
+      mobileServicesToggle.addEventListener('click', function() {
+        mobileServicesMenu.classList.toggle('hidden');
+        mobileServicesArrow.classList.toggle('rotate-180');
+      });
+    }
+  });
+</script>
