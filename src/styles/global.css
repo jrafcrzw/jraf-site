@@ -1,1 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Inter:wght@400;500;700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Antonio", sans-serif;
+
+  /* Colors (Branded Naming) */
+  --color-off-white: #FAF9F6;
+  --color-off-black: #1A1A1A;
+  --color-forest: #1B4332;
+  --color-chocolate: #3C2415;
+  --color-banana: #FFE135;
+}
