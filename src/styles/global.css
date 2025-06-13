@@ -13,3 +13,7 @@
   --color-night: #121212;
   --color-seasalt: #FAFAFA;
 }
+
+html {
+  scroll-behavior: smooth;
+}
