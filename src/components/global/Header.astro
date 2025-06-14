@@ -1,6 +1,7 @@
 ---
 // src/components/Header.astro
 ---
+
 <header class="sticky h-12 top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-5xl before:mx-2 lg:before:mx-auto before:rounded-[10px] before:bg-neutral-800/30 before:backdrop-blur-md">
   <nav class="relative max-w-5xl w-full flex flex-wrap md:flex-nowrap basis-full items-center justify-between py-2 ps-5 pe-2 md:py-0 mx-2 lg:mx-auto rounded-[10px]">
     <!-- Logo -->
@@ -21,22 +22,21 @@
       <div class="md:hidden">
         <button
           type="button"
-          class="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-semibold rounded-[10px] bg-neutral-800 text-white disabled:opacity-50 disabled:pointer-events-none"
-          id="hs-navbar-toggle"
+          class="size-9 flex justify-center items-center text-sm font-semibold rounded-[10px] bg-neutral-800 text-white disabled:opacity-50 disabled:pointer-events-none"
+          id="mobile-menu-toggle"
           aria-expanded="false"
-          aria-controls="hs-navbar-collapse"
+          aria-controls="mobile-menu"
           aria-label="Toggle navigation"
-          data-hs-collapse="#hs-navbar-collapse"
         >
-          <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-          <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <svg class="hamburger-icon shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+          <svg class="close-icon hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </div>
     </div>
     <!-- End Contact Button + Hamburger -->
 
     <!-- Collapsible Nav -->
-    <div id="hs-navbar-collapse" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-toggle">
+    <div id="mobile-menu" class="hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:bg-transparent bg-neutral-800/80 backdrop-blur-md rounded-[10px] mt-2 md:mt-0" aria-labelledby="mobile-menu-toggle">
       <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-y-3 py-2 md:py-0 md:ps-7">
         <a class="px-3 py-2 text-sm text-white hover:text-neutral-300 rounded-[10px]" href="#hero">Home</a>
         <a class="px-3 py-2 text-sm text-white hover:text-neutral-300 rounded-[10px]" href="#services">Services</a>
@@ -46,3 +46,60 @@
     <!-- End Collapsible Nav -->
   </nav>
 </header>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    if (toggleButton && mobileMenu) {
+      toggleButton.addEventListener('click', function() {
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle aria-expanded attribute
+        toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+        
+        // Toggle menu visibility
+        if (isExpanded) {
+          // Close menu
+          mobileMenu.classList.add('hidden');
+          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+        } else {
+          // Open menu
+          mobileMenu.classList.remove('hidden');
+          if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+          if (closeIcon) closeIcon.classList.remove('hidden');
+        }
+      });
+
+      // Close menu when clicking on nav links (optional UX improvement)
+      const navLinks = mobileMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close menu when clicking outside (optional UX improvement)
+      document.addEventListener('click', function(event) {
+        const target = event.target as Element;
+        const isClickInsideNav = toggleButton.contains(target) || mobileMenu.contains(target);
+        const isMenuOpen = !mobileMenu.classList.contains('hidden');
+        
+        if (!isClickInsideNav && isMenuOpen && window.innerWidth < 768) {
+          mobileMenu.classList.add('hidden');
+          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+</script>
