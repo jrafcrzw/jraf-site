@@ -17,3 +17,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer base {
+  html {
+    @apply font-body;
+  }
+}
