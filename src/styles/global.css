@@ -22,4 +22,8 @@ html {
   html {
     @apply font-body;
   }
+
+  body {
+    @apply bg-seasalt text-gunmetal antialiased;
+  }
 }
