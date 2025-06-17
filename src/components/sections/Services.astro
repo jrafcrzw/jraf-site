@@ -1,5 +1,5 @@
 ---
-//Services.astro
+// Services.astro
 ---
 
 <div id="services" class="max-w-[96vw] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -48,16 +48,44 @@
 
       <div class="lg:col-span-6">
         <div class="relative">
-          <!-- Tab Contents -->
           <div>
+            <!-- Tab 1 -->
             <div id="tabs-with-card-1" class="tab-content" role="tabpanel">
-              <img class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20 transition-all duration-300 ease-in-out" src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?auto=format&fit=crop&w=560&h=720&q=80" alt="Advanced tools">
+              <div class="relative group rounded-xl overflow-hidden">
+                <img class="w-full h-auto shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20 transition-all duration-300 ease-in-out group-hover:brightness-75" src="/services-website.jpg" alt="Web presence">
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                  <p class="text-white text-base sm:text-lg leading-relaxed">
+                     Development of high-performance websites, landing pages, and marketing funnels — all built with clean code, fast load times, and SEO best practices. Each build is ready for modern analytics and scalable to your business needs.
+                  </p>
+                </div>
+              </div>
             </div>
+
+            <!-- Tab 2 -->
             <div id="tabs-with-card-2" class="tab-content hidden" role="tabpanel">
-              <img class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20 transition-all duration-300 ease-in-out" src="https://images.unsplash.com/photo-1665686306574-1ace09918530?auto=format&fit=crop&w=560&h=720&q=80" alt="Smart dashboards">
+              <div class="relative group rounded-xl overflow-hidden">
+                <img class="w-full h-auto shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20 transition-all duration-300 ease-in-out group-hover:brightness-75" src="/services-tracking.jpg" alt="Tracking and Analytics">
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center space-y-4 px-6">
+                  <p class="text-white text-base sm:text-lg leading-relaxed">
+                    Implementation of accurate, privacy-conscious tracking setups using tools like GTM, GA4, Meta Pixel, and server-side tagging. Includes custom events, deduplication, conversion APIs, and debugging — ensuring clarity in attribution across ad platforms.
+                  </p>
+                  <p class="text-white text-base sm:text-lg leading-relaxed">
+                    We cover full customer journeys — including form submissions, page interactions, and eCommerce events (product views, carts, purchases) — so you always know what's working.
+                  </p>
+                </div>
+              </div>
             </div>
+
+            <!-- Tab 3 -->
             <div id="tabs-with-card-3" class="tab-content hidden" role="tabpanel">
-              <img class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20 transition-all duration-300 ease-in-out" src="https://images.unsplash.com/photo-1598929213452-52d72f63e307?auto=format&fit=crop&w=560&h=720&q=80" alt="Powerful features">
+              <div class="relative group rounded-xl overflow-hidden">
+                <img class="w-full h-auto shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20 transition-all duration-300 ease-in-out group-hover:brightness-75" src="/services-automation.jpg" alt="Automations and Integrations">
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                  <p class="text-white text-base sm:text-lg leading-relaxed">
+                     Design and implementation of smart automation systems that connect your marketing stack — from lead capture to CRM. This includes personalized workflows, automated follow-ups, internal alerts, and integrations with industry-standard platforms like HubSpot, Slack, and custom backends. Using webhooks and API connections, these automations eliminate manual tasks and ensure data moves smoothly across your tools — keeping teams aligned and prospects engaged.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
