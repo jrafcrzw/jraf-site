@@ -1,36 +1,41 @@
 <!-- About Section -->
-<div id="about" class="bg-gray-50 dark:bg-neutral-900 py-10 md:py-20">
-  <div class="px-4 sm:px-6 lg:px-8 max-w-[96vw] mx-auto">
+<section id="about" class="bg-seasalt dark:bg-night w-full py-16 md:py-24 lg:py-28">
+  <div class="max-w-[96vw] mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 md:items-center gap-10">
-      
-      <!-- Image -->
-      <div class="relative h-80 md:h-150 bg-gray-100 rounded-2xl dark:bg-neutral-800 md:order-2">
-        <img
-          class="absolute inset-0 size-full object-cover rounded-2xl"
-          src="/media/about-stats.webp"
-          alt="Testimonials and stats about JRAF.w"
-        />
-      </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-12 lg:gap-16">
       
       <!-- Text Content -->
-      <div class="pt-10 md:p-10 md:order-1 transition-colors duration-300">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-seagreen mb-4">
-            About
+      <div class="lg:order-1">
+        <div class="max-w-3xl">
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-racing dark:text-seagreen mb-6">
+            About <span class="text-seagreen dark:text-racing">JRAF.w</span>
           </h2>
-          <p class="text-base sm:text-lg mb-6 text-seasalt">
-            JRAF.w was founded to bridge the gap between web development and modern digital marketing — two fields often treated separately but equally vital for business success. Whether working with expert marketing teams or professionals seeking a powerful web presence, both a technically solid website and a data-driven marketing strategy are essential to drive real results.
-          </p>
-          <p class="text-base sm:text-lg text-seasalt">
-            By specializing in web development tailored to modern digital marketing needs — including SEO-friendly sites, landing pages, funnels, and advanced tracking — we deliver solutions designed for measurable growth. The focus is on functionality, scalability, and clean data attribution, ensuring marketing efforts are supported by reliable, high-performance systems.
-          </p>
+          <div class="space-y-6 text-base sm:text-lg text-night dark:text-seasalt/90">
+            <p>
+              JRAF.w was founded to bridge the gap between web development and modern digital marketing — two fields often treated separately but equally vital for business success.
+            </p>
+            <p>
+              We specialize in building <span class="font-medium text-racing dark:text-seagreen">performance-optimized websites</span> that serve as marketing powerhouses — combining technical excellence with data-driven strategies to deliver measurable growth.
+            </p>
+            <p>
+              Whether working with expert marketing teams or professionals building their web presence, we focus on <span class="font-medium text-racing dark:text-seagreen">scalable systems</span> that provide clean data attribution and support evolving business needs.
+            </p>
+          </div>
         </div>
       </div>
-      <!-- End Text Content -->
+      
+      <!-- Image -->
+      <div class="relative lg:order-2 h-80 sm:h-96 lg:h-[32rem] rounded-2xl overflow-hidden shadow-lg dark:shadow-none dark:ring-1 dark:ring-gunmetal">
+        <img
+          class="absolute inset-0 size-full object-cover"
+          src="/media/about-stats.webp"
+          alt="JRAF.w website performance statistics and testimonials"
+          loading="lazy"
+        />
+        <!-- Optional overlay for better text contrast -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+      </div>
       
     </div>
-    <!-- End Grid -->
   </div>
-</div>
-<!-- End About Section -->
+</section>

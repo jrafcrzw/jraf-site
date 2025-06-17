@@ -1,26 +1,61 @@
-<!-- Contact -->
-<div id="contact" class="max-w-[96vw] px-4 sm:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
-  <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
-    <h2 class="font-heading font-bold text-racing text-2xl sm:text-4xl ">
-      Let's build something that works.
-    </h2>
-    <p class="mt-6 text-lg">
-      Reach out for tailored web solutions, agency partnerships, or consulting support.
- We respond fast
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-6 md:gap-8 lg:gap-12">
-    <div class="aspect-w-16 aspect-h-6 lg:aspect-h-14 overflow-hidden bg-gray-100 rounded-2xl dark:bg-neutral-800">
-      <img class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out object-cover rounded-2xl" src="/media/contact-us.webp" alt="laptop with contact form" />
+<!-- Contact Section -->
+<section id="contact" class="bg-seasalt dark:bg-night w-full py-16 md:py-24 lg:py-28">
+  <div class="max-w-[96vw] mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mb-12 sm:mb-16 max-w-3xl text-center mx-auto">
+      <h2 class="font-heading font-bold text-racing dark:text-seagreen text-3xl sm:text-4xl lg:text-5xl">
+        Let's build something that <span class="text-seagreen dark:text-racing">works</span>
+      </h2>
+      <p class="mt-6 text-lg text-night dark:text-seasalt/90">
+        Reach out for tailored web solutions, agency partnerships, or consulting support.
+        <span class="block mt-2 font-medium text-racing dark:text-seagreen">We respond within 24 hours.</span>
+      </p>
     </div>
-    <!-- End Col -->
 
-    <div class="space-y-8 lg:space-y-16">
-      <script src="https://js.hsforms.net/forms/embed/50106977.js" defer></script>
-<div class="hs-form-frame" data-region="na1" data-form-id="a2a8c415-ada6-4966-8235-81c1a3621f5f" data-portal-id="50106977"></div>
+    <!-- Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+      <!-- Image - Now fills available height -->
+      <div class="lg:order-1 h-full min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-lg dark:shadow-none dark:ring-1 dark:ring-gunmetal">
+        <img 
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+          src="/media/contact-us.webp" 
+          alt="Team collaboration meeting to discuss web development projects" 
+          loading="lazy"
+          width="1200"
+          height="800"
+        />
+      </div>
+
+      <!-- Form Container with forced light background -->
+      <div class="lg:order-2 flex items-center bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-md dark:shadow-none">
+        <div class="w-full">
+          <!-- HubSpot Form Container -->
+          <div class="hs-form-frame" 
+               data-region="na1" 
+               data-form-id="a2a8c415-ada6-4966-8235-81c1a3621f5f" 
+               data-portal-id="50106977">
+          </div>
+          
+          <!-- Fallback Content -->
+          <div class="hs-form-fallback text-center py-8">
+            <p class="text-night mb-6">
+              Having trouble with the form? Email us directly at:
+            </p>
+            <a 
+              href="mailto:hello@jraf.work" 
+              class="inline-flex items-center text-lg font-medium text-seagreen hover:underline"
+            >
+              hello@jraf.work
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- End Col -->
   </div>
-</div>
-<!-- End Contact -->
+</section>
+
+<script src="https://js.hsforms.net/forms/embed/50106977.js" defer></script>

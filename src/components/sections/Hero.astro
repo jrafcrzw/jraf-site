@@ -1,51 +1,58 @@
 <!-- Hero -->
-<div id="hero" class="max-w-[96vw] mx-auto px-4 sm:px-6 lg:px-8 lg:mt-8">
-  <!-- Grid -->
-  <div class="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
-    <div class="lg:col-span-3">
-      <h1 class="text-xl lg:text-2xl leading-tight space-y-4">
-        <span>
-          <span class="font-heading font-bold text-racing text-6xl lg:text-7xl uppercase">WEBSITES</span> 
-          <span class="font-body">with purpose.</span>
-        </span>
-        <span>
-          <span class="font-heading font-bold text-racing text-6xl lg:text-7xl uppercase">TRACKING</span> 
-          <span class="font-body">that actually works.</span>
-        </span>
-        <span>
-          <span class="font-heading font-bold text-racing text-6xl lg:text-7xl uppercase">AUTOMATIONS</span> 
-          <span class="font-body">that scale with you.</span>
-        </span>
-      </h1>
+<section class="bg-seasalt dark:bg-night w-full py-16 md:py-20 lg:py-24"> <!-- Full-width bg with responsive vertical padding -->
+  <div class="max-w-[96vw] mx-auto px-4 sm:px-6 lg:px-8"> <!-- Content container -->
+    <!-- Grid -->
+    <div class="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
+      <div class="lg:col-span-3">
+        <h1 class="text-xl lg:text-2xl leading-tight space-y-4">
+          <span class="block">
+            <span class="font-heading font-bold text-racing dark:text-seagreen text-5xl sm:text-6xl lg:text-7xl uppercase tracking-tight">WEBSITES</span> 
+            <span class="font-body dark:text-seasalt">with purpose.</span>
+          </span>
+          <span class="block">
+            <span class="font-heading font-bold text-racing dark:text-seagreen text-5xl sm:text-6xl lg:text-7xl uppercase tracking-tight">TRACKING</span> 
+            <span class="font-body dark:text-seasalt">that actually works.</span>
+          </span>
+          <span class="block">
+            <span class="font-heading font-bold text-racing dark:text-seagreen text-5xl sm:text-6xl lg:text-7xl uppercase tracking-tight">AUTOMATIONS</span> 
+            <span class="font-body dark:text-seasalt">that scale with you.</span>
+          </span>
+        </h1>
 
-      <p class="mt-6 text-lg">
-        Trusted by modern brands to deliver fast websites, automated systems, and tracking setups that make results clear.
-      </p>
+        <p class="mt-6 text-lg text-night dark:text-seasalt/90">
+          Trusted by modern brands to deliver fast websites, automated systems, and tracking setups that make results clear.
+        </p>
 
-      <div class="mt-6 lg:mt-10">
-        <a 
-          href="#services"
-          class="inline-flex items-center px-6 py-3 text-sm font-medium rounded-[10px] bg-racing text-seasalt hover:bg-seagreen transition"
-        >
-          Explore Our Services
-        </a>
+        <div class="mt-6 lg:mt-10 flex flex-col sm:flex-row gap-4">
+          <a 
+            href="#services"
+            class="inline-flex justify-center items-center px-6 py-3 text-sm font-medium rounded-[10px] bg-racing hover:bg-seagreen text-seasalt transition-colors duration-300"
+          >
+            Explore Our Services
+          </a>
+          <a 
+            href="#contact"
+            class="inline-flex justify-center items-center px-6 py-3 text-sm font-medium rounded-[10px] border-2 border-racing dark:border-seagreen text-racing dark:text-seagreen hover:bg-racing/10 transition-colors duration-300"
+          >
+            Get in Touch
+          </a>
+        </div>
       </div>
-    </div>
-    <!-- End Col -->
+      <!-- End Col -->
 
-    <div class="lg:col-span-4 mt-10 lg:mt-0">
-      <img 
-        class="w-full rounded-[10px]" 
-        src="/media/hero-rocket.webp" 
-        alt="Rocket launching into space" 
-        loading="eager" 
-        fetchpriority="high" 
-        width="1200" 
-        height="800"
-      />
+      <div class="lg:col-span-4 mt-10 lg:mt-0">
+        <img 
+          class="w-full rounded-[10px] shadow-lg dark:shadow-none dark:ring-1 dark:ring-gunmetal" 
+          src="/media/hero-rocket.webp" 
+          alt="Rocket launching into space" 
+          loading="eager" 
+          fetchpriority="high" 
+          width="1200" 
+          height="800"
+        />
+      </div>
+      <!-- End Col -->
     </div>
-    <!-- End Col -->
+    <!-- End Grid -->
   </div>
-  <!-- End Grid -->
-</div>
-<!-- End Hero -->
+</section>
