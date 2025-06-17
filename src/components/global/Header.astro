@@ -2,105 +2,99 @@
 // src/components/Header.astro
 ---
 
-<header class="sticky h-12 top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-5xl before:mx-2 lg:before:mx-auto before:rounded-[10px] before:bg-neutral-800/30 before:backdrop-blur-md">
-  <nav class="relative max-w-5xl w-full flex flex-wrap md:flex-nowrap basis-full items-center justify-between py-2 ps-5 pe-2 md:py-0 mx-2 lg:mx-auto rounded-[10px]">
-    <!-- Logo -->
-    <div class="flex items-center">
-      <div class="text-xl font-heading text-white hover:text-neutral-300 tracking-wider">JRAF.w</div>
-    </div>
-    <!-- End Logo -->
+<!-- Background matcher -->
+<div class="fixed top-0 left-0 right-0 h-16 bg-seasalt dark:bg-night -z-10"></div>
 
-    <!-- Contact Button -->
-    <div class="md:order-3 flex items-center gap-x-3">
-      <div class="md:ps-3">
-        <a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-racing hover:bg-seagreen font-medium text-sm text-nowrap text-seasalt rounded-[10px] focus:outline-hidden" href="#contact">
-          Get in Touch here!
+<!-- Floating header -->
+<header class="sticky top-4 z-50 w-full">
+  <div class="max-w-[96vw] mx-auto px-4">
+    <nav class="flex items-center justify-between h-full w-full py-2 px-4 rounded-xl bg-white/80 dark:bg-gunmetal/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/30 shadow-lg hover:shadow-xl transition-shadow">
+      <!-- Logo -->
+      <a href="/" class="text-xl font-heading text-racing dark:text-seasalt font-bold tracking-wider hover:text-seagreen dark:hover:text-seagreen transition-colors">
+        JRAF.w
+      </a>
+
+      <!-- Desktop Navigation + CTA -->
+      <div class="hidden md:flex items-center gap-8">
+        <div class="flex gap-6">
+          <a class="text-racing dark:text-seasalt hover:text-seagreen text-sm font-medium transition-colors py-2 hover:bg-white/30 dark:hover:bg-gunmetal/50 px-3 rounded-lg" href="#services">Services</a>
+          <a class="text-racing dark:text-seasalt hover:text-seagreen text-sm font-medium transition-colors py-2 hover:bg-white/30 dark:hover:bg-gunmetal/50 px-3 rounded-lg" href="#about">About</a>
+        </div>
+        
+        <a 
+          href="#contact" 
+          class="inline-flex items-center gap-2 py-2 px-4 bg-racing hover:bg-seagreen text-seasalt font-medium text-sm rounded-lg transition-all duration-300 hover:shadow-md"
+        >
+          Get in Touch
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </a>
       </div>
 
-      <!-- Hamburger Button -->
-      <div class="md:hidden">
-        <button
-          type="button"
-          class="size-9 flex justify-center items-center text-sm font-semibold rounded-[10px] bg-neutral-800 text-white disabled:opacity-50 disabled:pointer-events-none"
-          id="mobile-menu-toggle"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-          aria-label="Toggle navigation"
-        >
-          <svg class="hamburger-icon shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-          <svg class="close-icon hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
-    </div>
-    <!-- End Contact Button + Hamburger -->
+      <!-- Mobile Menu Toggle -->
+      <button
+        id="mobile-menu-toggle"
+        class="md:hidden size-9 flex justify-center items-center rounded-lg bg-white/30 dark:bg-gunmetal/50 text-racing dark:text-seasalt hover:bg-white/50 dark:hover:bg-gunmetal/70 transition-colors"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation"
+      >
+        <svg class="hamburger-icon size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="close-icon hidden size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
 
-    <!-- Collapsible Nav -->
-    <div id="mobile-menu" class="hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:bg-transparent bg-neutral-800/30 backdrop-blur-md rounded-[10px] mt-2 md:mt-0" aria-labelledby="mobile-menu-toggle">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-y-3 py-2 md:py-0 md:ps-7">
-        <a class="px-3 py-2 text-sm text-white hover:text-neutral-300 rounded-[10px]" href="#">Home</a>
-        <a class="px-3 py-2 text-sm text-white hover:text-neutral-300 rounded-[10px]" href="#services">Services</a>
-        <a class="px-3 py-2 text-sm text-white hover:text-neutral-300 rounded-[10px]" href="#about">About</a>
+    <!-- Mobile Menu -->
+    <div 
+      id="mobile-menu" 
+      class="hidden md:hidden absolute top-full left-4 right-4 mt-2 py-3 px-4 bg-white/90 dark:bg-gunmetal/90 backdrop-blur-md rounded-xl shadow-xl border border-gray-200/50 dark:border-gray-700/30 transition-all duration-300"
+    >
+      <div class="flex flex-col gap-1">
+        <a class="px-3 py-2 text-racing dark:text-seasalt hover:bg-white/30 dark:hover:bg-gunmetal/50 rounded-lg transition-colors" href="/">Home</a>
+        <a class="px-3 py-2 text-racing dark:text-seasalt hover:bg-white/30 dark:hover:bg-gunmetal/50 rounded-lg transition-colors" href="#services">Services</a>
+        <a class="px-3 py-2 text-racing dark:text-seasalt hover:bg-white/30 dark:hover:bg-gunmetal/50 rounded-lg transition-colors" href="#about">About</a>
+        <a 
+          class="mt-2 px-3 py-2 bg-racing hover:bg-seagreen text-seasalt text-center rounded-lg transition-all hover:shadow-md" 
+          href="#contact"
+        >
+          Contact
+        </a>
       </div>
     </div>
-    <!-- End Collapsible Nav -->
-  </nav>
+  </div>
 </header>
 
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.querySelector('.hamburger-icon');
+  const close = document.querySelector('.close-icon');
 
-<script>
-  // Mobile menu toggle functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.querySelector('.hamburger-icon');
-    const closeIcon = document.querySelector('.close-icon');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      
+      menu.classList.toggle('hidden');
+      hamburger.classList.toggle('hidden');
+      close.classList.toggle('hidden');
+      
+      toggle.setAttribute('aria-expanded', String(!isExpanded));
+    });
 
-    if (toggleButton && mobileMenu) {
-      toggleButton.addEventListener('click', function() {
-        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-        
-        // Toggle aria-expanded attribute
-        toggleButton.setAttribute('aria-expanded', String(!isExpanded));
-        
-        // Toggle menu visibility
-        if (isExpanded) {
-          // Close menu
-          mobileMenu.classList.add('hidden');
-          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
-          if (closeIcon) closeIcon.classList.add('hidden');
-        } else {
-          // Open menu
-          mobileMenu.classList.remove('hidden');
-          if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
-          if (closeIcon) closeIcon.classList.remove('hidden');
-        }
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        hamburger.classList.remove('hidden');
+        close.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
       });
-
-      // Close menu when clicking on nav links (optional UX improvement)
-      const navLinks = mobileMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
-          if (closeIcon) closeIcon.classList.add('hidden');
-          toggleButton.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      // Close menu when clicking outside (optional UX improvement)
-      document.addEventListener('click', function(event) {
-        const target = event.target as Element;
-        const isClickInsideNav = toggleButton.contains(target) || mobileMenu.contains(target);
-        const isMenuOpen = !mobileMenu.classList.contains('hidden');
-        
-        if (!isClickInsideNav && isMenuOpen && window.innerWidth < 768) {
-          mobileMenu.classList.add('hidden');
-          if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
-          if (closeIcon) closeIcon.classList.add('hidden');
-          toggleButton.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-  });
+    });
+  }
+});
 </script>
